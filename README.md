@@ -24,3 +24,19 @@ Actually, `rg32.randomseed` takes a *string* as its argument.  However,
 if a number is given, Lua automatically performs “coercion” and
 makes the number a string.
 
+# spawner.c
+
+`spawner.c` is a library which allows Lua to run co-processes.  To
+compile, run the shell script `compile.spawner.sh`.
+
+Usage example:
+
+```lua
+require("spawner")
+w, r = spawner.popen2("wc")
+w:write("Hello, world!\n")
+w:flush()
+w:close()
+print(r:read())
+```
+
