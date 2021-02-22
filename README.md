@@ -1,3 +1,6 @@
+This is a collection of third party libraries included with Lunacy,
+so that stock Lua can run Lunacy scripts.
+
 # rg32.c
 
 `rg32.c` is a library with a better `math.random()` for Lua.  The shell
@@ -18,7 +21,9 @@ print(rg32.random())
 The API is a superset of Lua’s `math.random`, with the call `rand16` 
 (random number from 0 to 65535) added to the usual `randomseed` and 
 `random` calls (both of which have an API compatible with Lua’s native 
-`math.random`).
+`math.random`).  There is also a function called `rg32.runmill()` which
+allows the library to have “proof of work” algorithms (such as password
+hashers).
 
 Actually, `rg32.randomseed` takes a *string* as its argument.  However,
 if a number is given, Lua automatically performs “coercion” and
@@ -39,4 +44,14 @@ w:flush()
 w:close()
 print(r:read())
 ```
+
+# LFS (Lua File System)
+
+A version of the LFS library.  The upstream version is
+https://github.com/keplerproject/luafilesystem
+
+Also included is a script, `compile.lfs.sh`, to handily make a LFS
+shared object.
+
+Note that Lunacy only uses a subset of the Lua File System.
 
