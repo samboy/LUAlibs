@@ -1,6 +1,9 @@
 #!/bin/sh
 # This is for Linux and Cygwin.
 gcc -O2 -shared -o rg32.so rg32.c -llua
+# If that doesn't work, try something like
+#gcc -I/usr/include/lua5.3/ -O2 -shared -o rg32.so rg32.c -llua
+#gcc -I/usr/include/lua-5.1/ -O2 -shared -o rg32.so rg32.c -llua
 
 # On CentOS 8, run this instead:
 # gcc -O2 -fPIC -shared -o rg32.so rg32.c -llua

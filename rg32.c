@@ -37,7 +37,6 @@ void rgl(rg*u,rg*w,const char*v){rg s,q,c,x;rgp(40)w[c]=u[c%19]=0;for
 x){rgn;rgp(17)rgf(u,w);return;}}rgn;}}}
 rg rgi(rg*m,rg*b,rg*a){if(*a&2)rgf(m,b);return m[*a^=3];}
 
-/*
 static int rg32_rand32 (lua_State *L) {
   uint32_t num;
   num = rgi(rg_mill, rg_belt, &rg_phase);
@@ -47,7 +46,6 @@ static int rg32_rand32 (lua_State *L) {
   lua_pushnumber(L, r);
   return 1;
 }
-*/
 
 static int rg32_runmill (lua_State *L) {
   int count = luaL_checknumber(L, 1);
@@ -130,7 +128,7 @@ static int rg32_randomseed (lua_State *L) {
 
 static const luaL_Reg rg32lib[] = {
   {"runmill",    rg32_runmill},
-  //{"rand32",     rg32_rand32},
+  {"rand32",     rg32_rand32},
   {"rand16",     rg32_rand16},
   {"random",     rg32_random},
   {"randomseed", rg32_randomseed},
