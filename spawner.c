@@ -23,6 +23,8 @@ print(r:read())
 *  It provides a spawner object which can be used to capture interactive processes
 * Steve Donovan, 2007. 
 * Released under the same generous licence as SciTE itself.
+* Licensed revised to be MIT in 2021
+* See https://marc.info/?l=lua-l&m=164087898814318&w=2
 */
 #include <pty.h>
 #include <unistd.h>
